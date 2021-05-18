@@ -1,0 +1,333 @@
+body::-webkit-scrollbar {
+  max-width: 0.75em;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #333;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: #888;
+}
+
+.sidebar::-webkit-scrollbar {
+  /* max-width: 1px; */
+  max-width: 0;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: #333;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background-color: #888;
+}
+
+a:link, a:visited {
+  color: #000;
+}
+
+a:hover, a:active {
+  color: #aaa;
+}
+
+body {
+  color: #333;
+  background-color: #fff;
+  font-size: 1em;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Segoe UI Symbol", "Segoe UI Emoji", "Apple Color Emoji", Roboto, Helvetica, Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+}
+
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure, body, hr, dd {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 1em 0;
+}
+
+blockquote, figure {
+  margin: 3em 0;
+}
+
+hr {
+  margin: .5em auto;
+  height: 1px;
+  width: 90%;
+  border: 0;
+  background-color: #888;
+}
+
+ul, ol {
+  padding-left: 3.5em;
+  margin: 0 0 3em 0;
+}
+
+table {
+  border-collapse: collapse;
+  background-color: #fff;
+  color: #4d4d55;
+  width: 100%;
+  margin: 0 auto;
+}
+
+thead td {
+  font-weight: 700;
+  padding: .625em;
+  color: #4d4d55;
+  background-color: #ccc;
+}
+
+td {
+  padding: 2px 9px;
+  border: 1px solid #e6e6e6;
+  max-width: 90px;
+}
+
+td.wide {
+  max-width: 180px;
+}
+
+td.center {
+  text-align: center;
+}
+
+tr:nth-child(even) {
+  background-color: #F2F2F2;
+}
+
+tr:hover {
+  color: #222;
+  background-color: #CCC;
+}
+
+.sidebar {
+  width: 285px;
+  position: fixed;
+  height: 100%;
+  background-color: #ddd;
+  overflow: scroll;
+  overflow-x: hidden;
+  padding: 1em;
+}
+
+main.content {
+  margin-left: 317px;
+  height: 100%;
+}
+
+#start-button {
+  display: block;
+  background-color: #fff;
+  padding: .5em 2em;
+  border: 1px solid #ccc;
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+.input-group-container {
+  padding: 1em;
+}
+
+.file-select-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#file-name-input-label {
+  /* to get overflow: ellipsis to work */
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  width: 108px;
+  text-overflow: ellipsis;
+
+  font-size: 14px;
+}
+
+.no-select {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+/* ---------- Styles for custom checkboxes ---------- */
+
+/* container for a single input-label combo */
+.custom-checkbox {
+  /* don't fill the whole width but still allow background to work */
+  display: inline-block;
+  background-color: #fff;
+  font-size: 12px;
+}
+
+/* hide the little default box itself and remove it from flow */
+.custom-checkbox input {
+  position: absolute;
+  visibility: hidden;
+}
+
+/* the text part and "foreground" of the checkbox */
+.custom-checkbox label {
+  color: #999; /* another good color: #3c454c; */
+  transition: color 300ms;
+  cursor: pointer;
+  padding: .25em .5em;
+  
+  /* let us use z-index on the label and on the child (the 
+  pseudo element used for the background) */
+  position: relative;
+  z-index: 0;
+
+  /* hide overlap of the circle pseudo element when it expands */
+  display: block;
+  overflow: hidden;
+}
+
+/* text color when checked */
+.custom-checkbox input:checked ~ label {
+  color: #fff;
+}
+
+/* the "background" of the checkbox */
+.custom-checkbox label:before {
+  /* draw a circle with a pseudo element */
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  background-color: #5562eb;
+  content: '';
+
+  /* "fill" the label area without covering the label text */
+  z-index: -1;
+  position: absolute;
+
+  /* expand and contract from the center */
+  left: 50%;
+
+  /* hide the "background" when unchecked */
+  opacity: 0;
+
+  /* normal (smaller) scale when unchecked creates nice effect of expanding
+  to fill as the opacity goes 0 -> 1 upon being "checked" */
+  transform: scale3d(1, 1, 1);
+
+  /* animation for check and uncheck */
+  transition: all 300ms;  
+}
+
+/* make it visible and scale it up to cover the whole background */
+.custom-checkbox input:checked ~ label:before {
+  opacity: 1;
+  transform: scale3d(10, 10, 1);
+} /* ---------- End of styles for custom checkboxes ---------- */
+
+/* -----------------------------------------------------------
+   Styles for custom tabs
+
+Think of the part that you click (the tab) as the
+actual radio button even though it's the label, and 
+think of the content as appended on after something 
+is clicked. 
+
+.tab group (relative)
+
+    .custom tab  (float left)
+        .label   (relative)
+        .content (absolute, below the tabs)
+
+
+    .custom tab  (float left, checked)
+        .label   (relative, z:2 to cover the top level content's border)
+        .content (absolute, bottom, z:1 to show content over the 
+                  background and other content from other tabs)
+
+    .custom tab  (float left)
+        .label   (relative)
+        .content (absolute, below the tabs)
+
+----------------------------------------------------------- */
+
+/* A set of tabs */
+.tab-group {
+  /* Set the root for all the z-index and 
+  position: absolute/relative to work properly */
+  position: relative;
+  
+  /* Set the height for the background for the 
+  content (has to be set statically because the content 
+  is positioned with absolute) */
+  min-height: 156px;
+}
+
+/* The main unit for a single tab, made of the radio button, 
+label, and content, though the content is "pulled out" from
+the unit and positioned absolutely */
+.custom-tab {
+  float: left;
+}
+
+/* Hide the actual radio button */
+.custom-tab [type=radio] {
+  display: none;
+}
+
+.custom-tab > label {
+  /* Make the borders work without weird overlaps */
+  border: 1px solid #ccc;
+  margin-left: -1px;
+  left: 1px;
+  
+  /* Style the area you click */
+  background: #eee;
+  padding: 3px 12px;
+  display: inline-block;
+  
+  /* Allow use of z-index */
+  position: relative;
+}
+
+.custom-tab > .content {
+  /* position the content */
+  position: absolute;
+  top: 28px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  
+  /* style the container for the content for the tabs */
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+
+/* style the label preceeded by the checked radio box */
+[type=radio]:checked ~ label {
+  background: #fff;
+  border-bottom-color: transparent;
+  
+  /* Positive value higher than the .content's z-index so that
+  the .content's border doesn't cover the bottom of the tab, 
+  which is supposed to be transparent to help see which tab
+  is currently active better */
+  z-index: 2;
+}
+
+/* style the content corresponding with the checked tab */
+[type=radio]:checked ~ label ~ .content {
+  /* any positie value to stack it above the background and
+  the other .content from any other tabs in the tab group */
+  z-index: 1;
+}
+
+/* ----------------- End of styles for custom tabs ----------------- */

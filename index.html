@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Vocab Viewer</title>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+
+    <div class="wrapper">
+
+      <div class="sidebar">
+
+        <div id="sources-container" class="input-group-container">
+
+          <div class="tab-group">
+
+            <div class="custom-tab">
+              <input type="radio" id="radio-file" name="tab-group-1" checked>
+              <label for="radio-file" class="no-select">File</label>
+              <div class="content">
+                <p>Make a list out of a file:</p>
+                <div class="file-select-container">
+                  <button id="file-select-input">Choose a file</button>
+                  <label id="file-name-input-label">No File Chosen</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="custom-tab">
+              <input type="radio" id="radio-text" name="tab-group-1">
+              <label for="radio-text" class="no-select">Text</label>
+              <div class="content">
+                <p>Or paste some text:</p>
+                <input type="text" placeholder="paste text here" id="paste-input-box">
+              </div> 
+            </div>
+
+            <div class="custom-tab">
+              <input type="radio" id="radio-link" name="tab-group-1">
+              <label for="radio-link" class="no-select">Link</label>
+              <div class="content">
+                <p>Or paste a link:</p>
+                <input type="text" placeholder="link" id="link-input-box">
+              </div> 
+            </div>
+
+          </div>
+        </div>
+        
+        <hr id="sources-hr">
+
+        <div class="input-group-container">
+          <div class="custom-checkbox"><input type="checkbox" id="verbs-checkbox" name="verbs-checkbox" checked><label for="verbs-checkbox" class="no-select"> Include verbs</label></div>
+          <div class="custom-checkbox"><input type="checkbox" id="nouns-checkbox" name="nouns-checkbox" checked><label for="nouns-checkbox" class="no-select"> Include nouns</label></div>
+          <div class="custom-checkbox"><input type="checkbox" id="adjectives-checkbox" name="adjectives-checkbox"><label for="adjectives-checkbox" class="no-select"> Include adjectives</label></div>
+          <div class="custom-checkbox"><input type="checkbox" id="adverbs-checkbox" name="adverbs-checkbox"><label for="adverbs-checkbox" class="no-select"> Include adverbs</label></div>
+          <div class="custom-checkbox"><input type="checkbox" id="conjunctions-checkbox" name="conjunctions-checkbox"><label for="conjunctions-checkbox" class="no-select"> Include conjunctions</label></div>
+        </div>
+        
+        <div class="input-group-container">
+          <div class="custom-checkbox"><input type="checkbox" id="n5-checkbox" name="n5-checkbox" checked><label for="n5-checkbox" class="no-select"> Include n5</label></div>
+          <div class="custom-checkbox"><input type="checkbox" id="n4-checkbox" name="n4-checkbox" checked><label for="n4-checkbox" class="no-select"> Include n4</label></div>
+          <div class="custom-checkbox"><input type="checkbox" id="n3-checkbox" name="n3-checkbox"><label for="n3-checkbox" class="no-select"> Include n3</label></div>
+          <div class="custom-checkbox"><input type="checkbox" id="n2-checkbox" name="n2-checkbox"><label for="n2-checkbox" class="no-select"> Include n2</label></div>
+          <div class="custom-checkbox"><input type="checkbox" id="n1-checkbox" name="n1-checkbox"><label for="n1-checkbox" class="no-select"> Include n1</label></div>
+        </div>
+        
+        <div class="input-group-container">
+          <div class="custom-checkbox"><input type="checkbox" id="kanji-checkbox" name="kanji-checkbox" checked><label for="kanji-checkbox" class="no-select"> Include kanji</label></div>
+          <div class="custom-checkbox"><input type="checkbox" id="reading-checkbox" name="reading-checkbox" checked><label for="reading-checkbox" class="no-select"> Include reading</label></div>
+          <div class="custom-checkbox"><input type="checkbox" id="definition-checkbox" name="definition-checkbox" checked><label for="definition-checkbox" class="no-select"> Include definition</label></div>
+          <div class="custom-checkbox"><input type="checkbox" id="level-checkbox" name="level-checkbox"><label for="level-checkbox" class="no-select"> Include level</label></div>
+          <div class="custom-checkbox"><input type="checkbox" id="part-of-speech-checkbox" name="part-of-speech-checkbox"><label for="part-of-speech-checkbox" class="no-select"> Include part of speech</label></div>
+          <div class="custom-checkbox"><input type="checkbox" id="count-checkbox" name="count-checkbox"><label for="count-checkbox" class="no-select"> Include count</label></div>
+        </div>
+
+        <hr>
+        
+        <div class="input-group-container">
+          <button id="start-button" class="no-select">Generate Vocabulary List</button>
+        </div>
+
+        <hr>
+        
+      </div>
+  
+      <main class="content">
+        <div class="table-wrapper">
+          <table id="main-table">
+            <thead id="main-table-head"></thead>
+            <tbody id="main-table-body"></tbody>
+          </table>
+        </div>
+      </main>
+
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
