@@ -1,3 +1,3 @@
-# vocab-viewer
+# Jpaanese Vocab Viewer
 
 ## Download (Windows)
