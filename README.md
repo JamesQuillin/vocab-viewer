@@ -6,7 +6,9 @@ You can see this project in action [here](https://jamesquillin.github.io) in my 
 
 ## Running
 
-To get the app running, clone the code and install the dependencies. Make sure that the `/dict` directory has the appropriate files from the repository for the Kuromoji library to work, and if you run into errors you may need to visit the kuromoji npm module documentation for help initializing the library. For myself, installing the library the first time via NPM didn't include the dictionaries it used, so I added them manually to the repository and hopefully that helps fix any installation issues.
+To get the app running, clone the code and install the dependencies with `npm install`. 
+
+Make sure that the `/dict` directory has the appropriate files from the repository for the Kuromoji library to work, and if you run into errors you may need to visit the kuromoji npm module documentation for help initializing the library. For myself, installing the library the first time via NPM didn't include the dictionaries it used, so I added them manually to the repository and hopefully that helps fix any installation issues.
 
 It can be started locally with the start script by running `npm run start`.
 
