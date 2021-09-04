@@ -6,9 +6,9 @@ You can see this project in action [here](https://jamesquillin.github.io) in my 
 
 ## Running
 
-To get the app running, clone the code and install the dependencies. Make sure that the /dict directory has the appropriate files from the repository for the Kuromoji library to work, and if you run into errors you may need to visit the kuromoji npm module documentation for help initializing the library. For myself, installing the library the first time via NPM didn't include the dictionaries it used, so I added them manually to the repository and hopefully that helps fix any installation issues.
+To get the app running, clone the code and install the dependencies. Make sure that the `/dict` directory has the appropriate files from the repository for the Kuromoji library to work, and if you run into errors you may need to visit the kuromoji npm module documentation for help initializing the library. For myself, installing the library the first time via NPM didn't include the dictionaries it used, so I added them manually to the repository and hopefully that helps fix any installation issues.
 
-If you want to build the application to run as an app on any particular platform you can use the make script in the package.json. It uses electron forge so you can look at that documentation as well if you need. It was honestly a lot harder than expected to get the electron app to build, so I have only built it so far for Windows. If you want to build it for Mac or Linux then you will need to either build it directly on one of those types of machines or else look into other ways to get the appropriate files included in the build process, since Windows doesn't have access to many of them.
+If you want to build the application to run as an app on any particular platform you can use the make script in the `package.json`. It uses electron forge so you can look at that documentation as well if you need. It was honestly a lot harder than expected to get the electron app to build, so I have only built it so far for Windows. If you want to build it for Mac or Linux then you will need to either build it directly on one of those types of machines or else look into other ways to get the appropriate files included in the build process, since Windows doesn't have access to many of them.
 
 ## Download (Windows)
 
